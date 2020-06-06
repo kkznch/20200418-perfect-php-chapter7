@@ -18,7 +18,7 @@ class Router
     *     controller => 'users',
     *     action => 'edit',
     *   ],
-    * ] 
+    * ]
     **/
   public function compileRoutes($definitions)
   {
@@ -34,16 +34,16 @@ class Router
         $tokens[$i] = $token;
       }
 
-      $pattern = '/' . implode('/'. $tokens);
+      $pattern = '/' . implode('/', $tokens);
       $routes[$pattern] = $params;
     }
 
     return $routes;
   }
-  
+
   /**
    * path_info = /users/3/edit
-   * routes = [ 
+   * routes = [
    *   /users/(?P<id>[^/]+)/edit => [
    *     controller => 'users',
    *     action => 'edit',
@@ -52,7 +52,7 @@ class Router
    * params = [
    *   [
    *     controller => 'users',
-   *     action => 'edit', 
+   *     action => 'edit',
    *     0 => /users/3/edit,
    *     1 => 3,
    *     id => 3,
@@ -68,7 +68,7 @@ class Router
     foreach ($this->routes as $pattern => $params) {
       if (preg_match('#^' . $pattern . '$#', $path_info, $matches)) {
         $params = array_merge($params, $matches);
-        
+
         return $params;
       }
     }

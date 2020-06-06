@@ -122,7 +122,7 @@ abstract class Application
 
         $content = $controller->run($action, $params);
 
-        $this->response->setContent(content);
+        $this->response->setContent($content);
     }
 
     protected function findController($controller_class)

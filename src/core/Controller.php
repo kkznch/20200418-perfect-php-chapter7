@@ -37,7 +37,7 @@ abstract class Controller
             throw new UnauthorizedActionException();
         }
 
-        $content = $this->action_method($params);
+        $content = $this->$action_method($params);
 
         return $content;
     }

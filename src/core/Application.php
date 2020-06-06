@@ -20,7 +20,7 @@ abstract class Application
         if($debug){
             $this->debug = true;
             ini_set('display_errors', 1);
-            error_rporting(-1);
+            error_reporting(-1);
         } else {
             $this->debug = false;
             ini_set('display_errors', 0);
